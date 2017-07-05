@@ -5,27 +5,27 @@ import './SiteCarousel.css';
 class SiteCarousel extends React.Component {
     render() {
         let settings = {
-            dots: true,
+            dots: false,
             infinite: true,
             speed: 500,
-            slidesToShow: 5,
+            slidesToShow: 2,
             slidesToScroll: 1,
             centerMode: true,
             centerPadding: '60px',
-            afterChange: this.changed,
+            afterChange: this.changed.bind(this),
         };
         return (
-            <div>
+            <div className="siteCarousel">
                 <Slider {...settings}>
                     {this.props.sites.map(function(site, key) { return (
-                        <div key={key}>{site.title}</div>
+                        <div className="slide" key={key}>{site.title}</div>
                         );}
                     )}
                 </Slider>
             </div>
         );
     }
-    changed(slick, currentSlide) {
+    changed(currentSlide) {
         console.log('changed');
         this.props.siteSelected(this.props.sites[currentSlide]);
     }

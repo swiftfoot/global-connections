@@ -1,4 +1,12 @@
 .siteCarousel {
     position: absolute;
-    bottom: -100px;
+    bottom: 0px;
+    width: 100%;
+}
+
+.slide {
+    border-color: orange;
+    border-width: 1px;
+    border-radius: 10px;
+    border-style: solid;
 }
