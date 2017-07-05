@@ -17,18 +17,17 @@ class SiteCarousel extends React.Component {
         return (
             <div>
                 <Slider {...settings}>
-                    <div><h3>1</h3></div>
-                    <div><h3>2</h3></div>
-                    <div><h3>3</h3></div>
-                    <div><h3>4</h3></div>
-                    <div><h3>5</h3></div>
-                    <div><h3>6</h3></div>
+                    {this.props.sites.map(function(site, key) { return (
+                        <div key={key}>{site.title}</div>
+                        );}
+                    )}
                 </Slider>
             </div>
         );
     }
-    changed(slick) {
-        print("slide changed: " + slick);
+    changed(slick, currentSlide) {
+        console.log('changed');
+        this.props.siteSelected(this.props.sites[currentSlide]);
     }
 }
 

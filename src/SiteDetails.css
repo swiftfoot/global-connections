@@ -1,0 +1,12 @@
+.siteDetails {
+    position: absolute;
+    left: 200px;
+    top: 200px;
+    width: 1600px;
+    height: 800px;
+    border-color: orange;
+    border-width: 1px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+}
