@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import SiteCarousel from './SiteCarousel';
 import SiteDetail from './SiteDetails';
+import SiteStar from './SiteStar';
 import sites from './sites/globalSites';
 
 class App extends Component {
@@ -19,7 +20,12 @@ class App extends Component {
 
     render() {
         return (
-            <div>
+            <div className="app">
+                <div className="bg"/>
+                {sites.map((site, key) => { return (
+                        <SiteStar top={site.top} left={site.left} key={key} ref={"star"+site.person}/>
+                    );}
+                )}
                 <SiteCarousel sites={sites} siteSelected={this.selectSite.bind(this)}/>
                 <SiteDetail site={this.state.selectedSite} siteClosed={this.siteClosed.bind(this)}/>
             </div>
@@ -27,10 +33,16 @@ class App extends Component {
     }
 
     selectSite(site) {
+        // Deselect the previous site
+        if (this.state.selectedSite) {
+            this.refs["star" + this.state.selectedSite.person].setActive(false);
+        }
         console.log("site Selected");
         this.setState({
            selectedSite: site
         });
+        console.log(this.refs["star"+site.person]);
+        this.refs["star"+site.person].setActive(true);
     }
     siteClosed() {
         console.log("site closed");
