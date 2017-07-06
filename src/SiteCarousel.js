@@ -16,12 +16,12 @@ class SiteCarousel extends React.Component {
             dots: false,
             infinite: true,
             arrows: false,
-            speed: 300,
+            speed: 200,
             slidesToShow: 5,
             slidesToScroll: 1,
             centerMode: true,
             centerPadding: '0px',
-            afterChange: this.changed.bind(this),
+            beforeChange: this.changed.bind(this),
         };
         return (
             <div className="siteCarouselPositioner">
