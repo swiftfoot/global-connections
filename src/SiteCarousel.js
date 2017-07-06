@@ -16,7 +16,7 @@ class SiteCarousel extends React.Component {
             dots: false,
             infinite: true,
             arrows: false,
-            speed: 500,
+            speed: 300,
             slidesToShow: 5,
             slidesToScroll: 1,
             centerMode: true,
@@ -28,8 +28,7 @@ class SiteCarousel extends React.Component {
                 <div className="person">{this.props.sites[this.state.selectedSiteIndex].person}</div>
                 <hr className="separator"/>
                 <div className="location">{this.props.sites[this.state.selectedSiteIndex].city}, {this.props.sites[this.state.selectedSiteIndex].country} </div>
-                <div className="siteCarouselBackground">
-                </div>
+                <div className="siteCarouselBackground"/>
                 <div className="siteCarousel">
                     <Slider ref='slider' {...settings}>
                         {this.props.sites.map((site, key) => { return (
