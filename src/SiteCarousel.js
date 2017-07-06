@@ -40,6 +40,11 @@ class SiteCarousel extends React.Component {
             </div>
         );
     }
+
+    componentDidMount() {
+        // Hack because autoplay is broken in react-slick for me
+        this.setAutoScroll(true);
+    }
     tapped(e) {
         this.refs.slider.slickGoTo(parseInt(e.target.parentElement.getAttribute('data-index'), 10));
     }
@@ -50,6 +55,16 @@ class SiteCarousel extends React.Component {
             selectedSiteIndex: currentSlide
         });
         this.props.siteSelected(this.props.sites[currentSlide]);
+    }
+    setAutoScroll(autoScroll) {
+        if (!autoScroll) {
+            clearTimeout(this.autoPlayInterval);
+            this.refs.slider.innerSlider.pause();
+        } else {
+            this.autoPlayInterval = setInterval(() => {
+                this.refs.slider.slickNext()
+            }, 2000);
+        }
     }
 }
 

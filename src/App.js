@@ -20,13 +20,13 @@ class App extends Component {
 
     render() {
         return (
-            <div className="app">
+            <div className="app" onTouchStart={this.resetTimeout.bind(this)} onClick={this.resetTimeout.bind(this)}>
                 <div className="bg"/>
                 {sites.map((site, key) => { return (
                         <SiteStar top={site.top} left={site.left} key={key} ref={"star"+site.person}/>
                     );}
                 )}
-                <SiteCarousel sites={sites} siteSelected={this.selectSite.bind(this)}/>
+                <SiteCarousel sites={sites} siteSelected={this.selectSite.bind(this)} ref="siteCarousel"/>
                 <SiteDetail site={this.state.selectedSite} siteClosed={this.siteClosed.bind(this)}/>
             </div>
         );
@@ -49,6 +49,13 @@ class App extends Component {
         this.setState({
             selectedSite: null
         });
+    }
+    resetTimeout() {
+        clearTimeout(this.autoScrollTimeout);
+        this.refs.siteCarousel.setAutoScroll(false);
+        this.autoScrollTimeout = setTimeout(() => {
+            this.refs.siteCarousel.setAutoScroll(true);
+        }, 30000);
     }
 }
 
