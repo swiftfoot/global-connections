@@ -4,6 +4,7 @@ import SiteCarousel from './SiteCarousel';
 import SiteDetail from './SiteDetails';
 import SiteStar from './SiteStar';
 import sites from './sites/globalSites';
+import { createStore } from 'redux';
 
 class App extends Component {
     constructor(props) {
@@ -30,7 +31,7 @@ class App extends Component {
                 <SiteCarousel sites={sites} siteSelected={this.selectSite.bind(this)}
                               ref="siteCarousel"
                               siteTapped={this.siteTapped.bind(this)}/>
-                <SiteDetail ref="siteDetail" site={this.state.selectedSite} siteClosed={this.siteClosed.bind(this)}/>
+                <SiteDetail ref="siteDetail" siteClosed={this.siteClosed.bind(this)}/>
             </div>
         );
     }

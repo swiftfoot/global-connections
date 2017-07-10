@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import './SiteStar.css';
 
 class SiteStar extends Component {
@@ -28,5 +30,9 @@ class SiteStar extends Component {
     }
 }
 
-export default SiteStar;
+SiteStar.propTypes = {
+    top: PropTypes.number.isRequired,
+    left: PropTypes.number.isRequired,
+}
 
+export default SiteStar;

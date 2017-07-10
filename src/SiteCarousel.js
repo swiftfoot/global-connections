@@ -1,6 +1,7 @@
 import Slider from 'react-slick';
 import React from 'react';
 import './SiteCarousel.css';
+import PropTypes from 'prop-types';
 
 class SiteCarousel extends React.Component {
     constructor(props) {
@@ -87,6 +88,19 @@ class SiteCarousel extends React.Component {
             visible: true,
         });
     }
+}
+
+SiteCarousel.propTypes = {
+    sites: PropTypes.arrayOf(PropTypes.shape({
+        person: PropTypes.string.isRequired,
+        city: PropTypes.string.isRequired,
+        country: PropTypes.string.isRequired,
+        thumbnail: PropTypes.string.isRequired,
+        title:  PropTypes.string.isRequired,
+        war:  PropTypes.string.isRequired
+    })).isRequired,
+    siteSelected: PropTypes.func.isRequired,
+    siteTapped: PropTypes.func.isRequired
 }
 
 export default SiteCarousel;
