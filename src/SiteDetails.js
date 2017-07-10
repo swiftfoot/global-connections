@@ -55,7 +55,7 @@ class SiteDetails extends Component {
                     </div>
                     <div className="moreDetails" style={moreDetailsStyle}>
                         <img src="img/more_details.png" alt="More Details"/>
-                        <div className="personMore">{this.state.selectedSite.person}</div>
+                        <div>{this.state.selectedSite.person}</div>
                         <div className="learnMore">{this.state.selectedSite.learn_more}</div>
                     </div>
                     <img src="img/close.png" style={initialDetailsStyle} alt="Close" className="closeButton" onClick={this.closeSite.bind(this)} onTouchStart={this.closeSite.bind(this)}/>
