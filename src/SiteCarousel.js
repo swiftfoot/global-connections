@@ -1,14 +1,15 @@
 import Slider from 'react-slick';
 import React from 'react';
 import './SiteCarousel.css';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { selectSite, siteTapped } from './actions/AppActions';
 
 class SiteCarousel extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedSiteIndex: 0,
-            visible: true
+            autoScroll: true,
         }
     }
 
@@ -23,19 +24,19 @@ class SiteCarousel extends React.Component {
             slidesToScroll: 1,
             centerMode: true,
             centerPadding: '0px',
-            afterChange: this.changed.bind(this),
+            afterChange: this.props.siteChanged.bind(this),
         };
-        const style={visibility: this.state.visible ? "visible": "hidden"};
+        const style={visibility: this.props.visible ? "visible": "hidden"};
         return (
             <div className="siteCarouselPositioner" style={style}>
-                <div className="person">{this.props.sites[this.state.selectedSiteIndex].person}</div>
+                <div className="person">{this.props.selectedSite.person}</div>
                 <hr className="separator"/>
-                <div className="location">{this.props.sites[this.state.selectedSiteIndex].city}, {this.props.sites[this.state.selectedSiteIndex].country} </div>
+                <div className="location">{this.props.selectedSite.city}, {this.props.selectedSite.country} </div>
                 <div className="siteCarouselBackground"/>
                 <div className="siteCarousel">
                     <Slider ref='slider' {...settings}>
                         {this.props.sites.map((site, key) => { return (
-                            <div className="slide" key={key} onDoubleClick={this.tapped.bind(this)}><img draggable="false" id={key} className="innerSlide" src={site.thumbnail} alt={site.person}></img></div>
+                            <div className="slide" key={key} onTouchStart={this.onDoubleClick.bind(this)} onDoubleClick={this.onDoubleClick.bind(this)}><img draggable="false" id={key} className="innerSlide" src={site.thumbnail} alt={site.person}></img></div>
                             );}
                         )}
                     </Slider>
@@ -44,49 +45,53 @@ class SiteCarousel extends React.Component {
         );
     }
 
-    componentDidMount() {
-        // Hack because autoplay is broken in react-slick for me
-        this.setAutoScroll(true);
-    }
-    tapped(e) {
+    /**
+     * Need to decide whether to move the slider or launch the site
+     */
+    onDoubleClick(e) {
         let site = parseInt(e.target.id, 10);
-        if (site === this.state.selectedSiteIndex) {
+        if (this.props.sites[site] === this.props.selectedSite) {
             this.props.siteTapped(this.props.sites[site]);
         } else {
             this.refs.slider.slickGoTo(site);
         }
     }
-    changed(currentSlide) {
-        // Update the current site index
-        this.setState( {
-            selectedSiteIndex: currentSlide
-        });
-        this.props.siteSelected(this.props.sites[currentSlide]);
+
+    componentDidMount() {
+        // Check every 2 seconds whether autoscroll needed
+        this.autoPlayInterval = setInterval(() => {
+            if (this.state.autoScroll) {
+                this.refs.slider.slickNext();
+            }
+        }, 2000);
+        document.body.addEventListener('touchstart', (e) => {
+            this.setAutoScroll(false);
+        }, false);
+        document.body.addEventListener('click', (e) => {
+            this.setAutoScroll(false);
+        }, false);
     }
 
     setAutoScroll(autoScroll) {
+        this.setState( {
+            autoScroll: autoScroll
+        })
+        //Set a timer for 30 seconds to restart autoscroll
         if (!autoScroll) {
-            clearTimeout(this.autoPlayInterval);
-            this.refs.slider.innerSlider.pause();
-        } else {
-            this.autoPlayInterval = setInterval(() => {
-                this.refs.slider.slickNext()
-            }, 2000);
+            this.resetTimeout();
         }
     }
 
-    hide() {
-        this.setState({
-            selectedSiteIndex: this.state.selectedSiteIndex,
-            visible: false,
-        });
-        this.setAutoScroll(false);
-    }
-    show() {
-        this.setState({
-            selectedSiteIndex: this.state.selectedSiteIndex,
-            visible: true,
-        });
+    resetTimeout() {
+        clearTimeout(this.autoScrollTimeout);
+
+        this.autoScrollTimeout = setTimeout(() => {
+             if (this.props.visible) {
+                this.setAutoScroll(true);
+             } else {
+                 this.resetTimeout();
+             }
+        }, 5000);
     }
 }
 
@@ -99,8 +104,26 @@ SiteCarousel.propTypes = {
         title:  PropTypes.string.isRequired,
         war:  PropTypes.string.isRequired
     })).isRequired,
-    siteSelected: PropTypes.func.isRequired,
-    siteTapped: PropTypes.func.isRequired
-}
+};
 
-export default SiteCarousel;
+const mapDispatchToProps = (dispatch, ownprops) => {
+    return {
+        siteTapped: (site) => {
+            dispatch(siteTapped(site));
+        },
+        siteChanged: (currentSlide) => {
+            dispatch(selectSite(ownprops.sites[currentSlide]));
+        }
+    }
+};
+
+const mapStateToProps = (state, ownprops) => {
+    return {
+        selectedSite: state.site,
+        sites: ownprops.sites,
+        visible: !state.details
+    }
+
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SiteCarousel);

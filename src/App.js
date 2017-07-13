@@ -5,6 +5,7 @@ import SiteDetail from './SiteDetails';
 import SiteStar from './SiteStar';
 import sites from './sites/globalSites';
 import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
 class App extends Component {
     constructor(props) {
@@ -17,62 +18,37 @@ class App extends Component {
         this.state = {
             selectedSite: null
         };
+        this.store = createStore(this.handleState.bind(this));
     }
 
     render() {
         return (
-            <div className="app" onTouchStart={this.resetTimeout.bind(this)} onClick={this.resetTimeout.bind(this)}>
-                <img src="img/GlobalConnectionsTitle.png" alt="Global Connections"/>
-                <div className="bg"/>
-                {sites.map((site, key) => { return (
-                        <SiteStar top={site.top} left={site.left} key={key} ref={"star"+site.person}/>
-                    );}
-                )}
-                <SiteCarousel sites={sites} siteSelected={this.selectSite.bind(this)}
-                              ref="siteCarousel"
-                              siteTapped={this.siteTapped.bind(this)}/>
-                <SiteDetail ref="siteDetail" siteClosed={this.siteClosed.bind(this)}/>
-            </div>
+            <Provider store={this.store}>
+                <div className="app">
+                    <img src="img/GlobalConnectionsTitle.png" alt="Global Connections" className="titleImage"/>
+                    <div className="bg"/>
+                    {sites.map((site, key) => { return (
+                            <SiteStar top={site.top} left={site.left} key={key} active={false} site={site}/>
+                        );}
+                    )}
+                    <SiteCarousel sites={sites} selectedSiteIndex="0"/>
+                    <SiteDetail />
+                </div>
+            </Provider>
         );
     }
 
-    componentDidMount() {
-        this.selectSite(sites[0]);
-    }
-
-    selectSite(site) {
-        // Deselect the previous site
-        if (this.state.selectedSite) {
-            this.refs["star" + this.state.selectedSite.person].setActive(false);
+    handleState(state={site: sites[0], details: false}, action) {
+        switch(action.type) {
+            case 'OPEN':
+                return {site: state.site, details: true};
+            case 'SWITCHSITE':
+                return {site: action.site, details: false};
+            case 'CLOSE':
+                return {site: state.site, details: false    };
+            default:
+                return state;
         }
-        console.log("site Selected");
-        this.setState({
-           selectedSite: site
-        });
-        console.log(this.refs["star"+site.person]);
-        this.refs["star"+site.person].setActive(true);
-    }
-
-    siteTapped(site) {
-        this.refs.siteCarousel.hide();
-        this.showingDetail = true;
-        this.refs.siteDetail.openSite(site);
-    }
-    siteClosed() {
-        this.showingDetail = false;
-        this.refs.siteCarousel.show();
-    }
-    resetTimeout() {
-        clearTimeout(this.autoScrollTimeout);
-        this.refs.siteCarousel.setAutoScroll(false);
-        this.autoScrollTimeout = setTimeout(() => {
-            if (!this.showingDetail) {
-                this.refs.siteCarousel.setAutoScroll(true);
-            } else {
-                // Try again in 30 seconds
-                this.resetTimeout();
-            }
-        }, 30000);
     }
 }
 
