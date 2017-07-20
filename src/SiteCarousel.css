@@ -20,7 +20,7 @@
     position: absolute;
     bottom: 0px;
     width: 100%;
-    height: 450px;
+    height: 550px;
 }
 
 .innerSlide {
@@ -45,16 +45,21 @@
 .person {
     text-align: center;
     width: 100%;
+    color: #F58F00;
+    text-transform: uppercase;
+    font-size: 28pt;
+    font-family: GhostLight;
 }
 
 .location {
     text-align: center;
     width: 100%;
+    color: #ffffff;
+    font-size: 22pt;
+    font-family: GhostLight;
 }
 
 .separator {
-    border:none;
-    border-top:1px solid;/* or bottom */
-    margin:1em auto;
-    width:17em;
+    margin: auto;
+    display: block;
 }

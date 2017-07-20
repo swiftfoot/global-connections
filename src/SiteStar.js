@@ -7,7 +7,7 @@ import './SiteStar.css';
 class SiteStar extends Component {
 
     render() {
-        const imgSrc = this.props.active ? "selectedStar.png" : "unselectedStar.png";
+        const imgSrc = this.props.active ? "Star-LIT.png" : "Star-50percentLIT.png";
         const style = {
             position: "absolute",
             top: this.props.top,

@@ -47,22 +47,26 @@ class SiteDetails extends Component {
                         </Slider>
                     </div>
                     <div className="rightDetails" style={initialDetailsStyle}>
-                        <div className="locationDetails">{this.props.selectedSite.city + ", " + this.props.selectedSite.country}</div>
-                        <div className="personDetails">{this.props.selectedSite.person}</div>
+                        <div className="locationDetails location">{this.props.selectedSite.city + ", " + this.props.selectedSite.country}</div>
+                        <img className="separator" src="img/Lines-TwoYellowDividers.png" alt=""/>
+                        <div className="personDetails person">{this.props.selectedSite.person}</div>
+                        <img className="separator" src="img/Lines-TwoYellowDividers.png" alt=""/>
                         <div className="war">{this.props.selectedSite.war}</div>
+                        <img className="separator" src="img/Line-CreamDotted.png" alt=""/>
                         <div className="caption">{this.props.selectedSite.detailImages[this.state.imageIndex].caption}</div>
+                        <img className="separator" src="img/Line-CreamDotted.png" alt=""/>
                         {
-                            this.props.selectedSite.learn_more ? <div className="moreDetailsImage"><div>WANT TO LEARN MORE?</div><img draggable="false" src="img/more_details.png" alt="More Details" onTouchStart={this.openMoreDetails.bind(this)} onClick={this.openMoreDetails.bind(this)}></img></div> : ""}
+                            this.props.selectedSite.learn_more ? <div className="moreDetailsImage"><img draggable="false" src="img/Button-WantToLearnMore.png" alt="More Details" onTouchStart={this.openMoreDetails.bind(this)} onClick={this.openMoreDetails.bind(this)}></img></div> : ""}
 
 
                     </div>
                     <div className="moreDetails" style={moreDetailsStyle}>
-                        <img src="img/more_details.png" alt="More Details"/>
-                        <div>{this.props.selectedSite.person}</div>
+                        <img src="img/Button-WantToLearnMore.png" alt="More Details"/>
+                        <div className="moreDetailsPerson">{this.props.selectedSite.person}</div>
                         <div className="learnMore">{this.props.selectedSite.learn_more}</div>
                     </div>
-                    <img src="img/close.png" style={initialDetailsStyle} alt="Close" className="closeButton" onClick={this.props.onCloseSite} onTouchStart={this.props.onCloseSite}/>
-                    <img src="img/back.png" style={moreDetailsStyle} alt="Back" className="backButton" onClick={this.closeMoreDetails.bind(this)} onTouchStart={this.closeMoreDetails.bind(this)}/>
+                    <img src="img/Button-Close-X.png" style={initialDetailsStyle} alt="Close" className="closeButton" onClick={this.props.onCloseSite} onTouchStart={this.props.onCloseSite}/>
+                    <img src="img/Button-BackArrow.png" style={moreDetailsStyle} alt="Back" className="backButton" onClick={this.closeMoreDetails.bind(this)} onTouchStart={this.closeMoreDetails.bind(this)}/>
                 </div>
             );
         } else {

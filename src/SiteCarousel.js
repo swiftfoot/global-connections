@@ -30,7 +30,7 @@ class SiteCarousel extends React.Component {
         return (
             <div className="siteCarouselPositioner" style={style}>
                 <div className="person">{this.props.selectedSite.person}</div>
-                <hr className="separator"/>
+                <img src="img/Line-SingleWhite.png" alt="" className="separator"/>
                 <div className="location">{this.props.selectedSite.city}, {this.props.selectedSite.country} </div>
                 <div className="siteCarouselBackground"/>
                 <div className="siteCarousel">

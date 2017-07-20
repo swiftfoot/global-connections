@@ -5,10 +5,11 @@
     margin-top: 40px;
     float: left;
     display: flex;
-    border-color: orange;
+    /*border-color: orange;
     border-width: 2px;
     border-style: solid;
     border-radius: 10px;
+    */
     color: white;
     z-index: 2;
 }
@@ -18,14 +19,17 @@
     width: 100%;
     height: 75vh;
     float: left;
-    background-color: black;
-    opacity: .75;
-    border-radius: 7px;
+    /*background-color: black;*/
+    opacity: 0.85;
+    /*border-radius: 7px;*/
     z-index: -1;
+    background-image: url("img/BackgroundScreen.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .detailImageCarousel {
-    width: 500px;
+    width: 600px;
     height: 100%;
     margin: 80px;
 }
@@ -43,8 +47,8 @@
 }
 
 .imageDetails {
-    height: 500px;
-    width: 500px;
+    height: 600px;
+    width: 600px;
 }
 
 .image {
@@ -62,7 +66,7 @@
 }
 
 .rightDetails {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -76,32 +80,30 @@
     width:17em;
 }
 
+.locationDetails {
+    padding-top: 60px;
+}
+
 .locationDetails, .personDetails {
     text-align: center;
     width: 85%;
-    border-bottom-style: double;
-    border-color: orange;
-    padding-top: 60px;
-    padding-bottom: 60px;
     text-transform: uppercase;
 }
 
 .war {
-    font-weight: bold;
-    border-bottom-style: dashed;
-    border-bottom-width: 1px;
+    font-family: GhostLight;
+    font-size: 18pt;
     width: 85%;
-    padding: 20px;
     text-align: center;
-    border-color: white;
 }
 
 .caption {
-    border-bottom-style: dashed;
-    border-bottom-width: 1px;
     width: 85%;
     text-align: center;
-    padding: 20px;
+}
+
+.moreDetailsPerson {
+    font-size: 18pt;
 }
 
 .moreDetailsImage {
@@ -110,6 +112,7 @@
     align-items: center;
     justify-content: flex-end;
     width: 85%;
+    padding-bottom: 40px;
 }
 
 .moreDetails {
@@ -129,7 +132,7 @@
 }
 
 .learnMore {
-    width: 80%;
+    width: 75%;
     margin-top: 20px;
     padding-left: 10%;
     padding-right: 10%;
@@ -143,18 +146,20 @@
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     background-color: #343333;
     opacity: .75;
-    border-radius: 10px;
+    border-radius: 7px;
 }
 
 ::-webkit-scrollbar
 {
     width: 20px;
-    background-color: orange;
-    border-radius: 10px;
+    border-radius: 7px;
 }
 
 ::-webkit-scrollbar-thumb
 {
-    background-color: orange;
+    background-image: url("img/ScrollbarSlider.png");
+    background-repeat: no-repeat; /*Avoid the image to repeat*/
+    background-size: cover; /*Make the image full size*/
+    background-position:center; /*Center the img*/
     border-radius: 10px;
 }

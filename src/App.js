@@ -18,14 +18,17 @@ class App extends Component {
         this.state = {
             selectedSite: null
         };
-        this.store = createStore(this.handleState.bind(this));
+        this.store = createStore(this.handleState);
     }
 
     render() {
         return (
             <Provider store={this.store}>
                 <div className="app">
-                    <img src="img/GlobalConnectionsTitle.png" alt="Global Connections" className="titleImage"/>
+                    <div className="titleImage app">
+                        <img src="img/Header01-HCHM.png" alt="Global Connections"/>
+                        <img src="img/Header02-GlobalConnections.png" alt="Global Connections"/>
+                    </div>
                     <div className="bg"/>
                     {sites.map((site, key) => { return (
                             <SiteStar top={site.top} left={site.left} key={key} active={false} site={site}/>
@@ -38,6 +41,12 @@ class App extends Component {
         );
     }
 
+    /**
+     * App state reducer function, might be better broken out to separate module
+     * @param state
+     * @param action
+     * @returns {*}
+     */
     handleState(state={site: sites[0], details: false}, action) {
         switch(action.type) {
             case 'OPEN':
