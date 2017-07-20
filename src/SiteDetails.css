@@ -37,13 +37,13 @@
 .closeButton {
     position: absolute;
     right: -50px;
-    top: -50px;
+    top: -25px;
 }
 
 .backButton {
     position: absolute;
     left: -50px;
-    top: -50px;
+    top: -25px;
 }
 
 .imageDetails {
