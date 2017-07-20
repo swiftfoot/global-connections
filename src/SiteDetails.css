@@ -58,11 +58,12 @@
 
 .slick-dots li button:before {
     color: white;
+    opacity: 1.0;
 }
 
 .slick-dots li.slick-active button:before {
     opacity:.75;
-    color:white
+    color:#F58F00
 }
 
 .rightDetails {
