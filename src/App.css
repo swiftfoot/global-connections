@@ -31,7 +31,7 @@ html, body {
     width: 100%;
     height: 100%;
     z-index: -2;
-    background-color: black;
+    background-image: url("img/Unit1-MapOverview.png");
     background-repeat: no-repeat; /*Avoid the image to repeat*/
     background-size: cover; /*Make the image full size*/
     background-position:center; /*Center the img*/

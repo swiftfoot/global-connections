@@ -61,7 +61,7 @@ class SiteDetails extends Component {
 
                     </div>
                     <div className="moreDetails" style={moreDetailsStyle}>
-                        <img src="img/Button-WantToLearnMore.png" alt="More Details"/>
+                        <img src="img/Header-ReadMore.png" alt="More Details"/>
                         <div className="moreDetailsPerson">{this.props.selectedSite.person}</div>
                         <div className="learnMore">{this.props.selectedSite.learn_more}</div>
                     </div>

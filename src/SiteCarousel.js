@@ -63,7 +63,7 @@ class SiteCarousel extends React.Component {
             if (this.state.autoScroll) {
                 this.refs.slider.slickNext();
             }
-        }, 2000);
+        }, 5000);
         document.body.addEventListener('touchstart', (e) => {
             this.setAutoScroll(false);
         }, false);
@@ -91,7 +91,7 @@ class SiteCarousel extends React.Component {
              } else {
                  this.resetTimeout();
              }
-        }, 5000);
+        }, 30000);
     }
 }
 
