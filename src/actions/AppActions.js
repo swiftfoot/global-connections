@@ -5,10 +5,10 @@
  * @returns {{}}
  */
 export function selectSite(site) {
-    return{
-        type: 'SWITCHSITE',
-        site: site
-    };
+  return {
+    type: 'SWITCHSITE',
+    site,
+  };
 }
 
 /**
@@ -16,14 +16,14 @@ export function selectSite(site) {
  * @param site
  */
 export function siteTapped(site) {
-    return{
-        type: 'OPEN'
-    };
+  return {
+    type: 'OPEN',
+  };
 }
 
 export function siteClosed() {
-    return{
-        type: 'CLOSE'
-    };
+  return {
+    type: 'CLOSE',
+  };
 }
 
