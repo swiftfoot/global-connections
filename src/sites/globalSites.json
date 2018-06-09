@@ -4,81 +4,78 @@
     "person": "THE TUSKEGEE AIRMEN",
     "label": "Who Were They?",
     "thumbnail": "img/carousel/TuskegeeAirmen.png",
-    "title": "Bataan Death March and Hellships",
-    "war": "Phillipine American War",
     "detailImages": [
       {
         "src": "img/tuskegee-details/1-Tuskegee.png",
-        "title": "Wiley Graduate",
+        "title": "In Training",
         "caption":
-          "Mack Hopkins grew up in Marshall, Texas. His parents taught at Wiley University. In 1942, Mack graduated from Wiley. Soon afterwards, he qualified to join the Tuskegee Airmen.",
-        "credit": "WILEY  GRADUATING  CLASS,  1942|HCHM  COLLECTIONS"
+          "The Tuskegee Airmen were dedicated, patriotic young men who become the United States’ first black military airmen. In 1941, after passing rigorous entrance exams, the first group of African American aviation cadets began their training at Tuskegee Army Air Field in Alabama.",
+        "credit": "FIRST CLASS OF TUSKEGEE CADETS, TUSKEGEE AIR FIELD, 1941"
       },
       {
         "src": "img/tuskegee-details/2-Tuskegee.png",
-        "caption": "Detail Image 2"
+        "title": "It Takes a Team",
+        "caption":
+          "In addition to pilots, Black navigators, bombardiers, gunnery crews, and mechanics were also trained at segregated bases across the nation. All are considered Tuskegee Airmen.",
+        "credit":
+          "STAFF SGT. JAMES McGEE WORKING ON P-39, ITALY, 1944 | U.S. AIR FORCE"
       },
       {
         "src": "img/tuskegee-details/3-Tuskegee.png",
-        "caption": "Detail Image 3"
+        "title": "In Training",
+        "caption":
+          "The Tuskegee Airmen were dedicated, patriotic young men who become the United States’ first black military airmen. In 1941, after passing rigorous entrance exams, the first group of African American aviation cadets began their training at Tuskegee Army Air Field in Alabama.",
+        "credit": "FIRST CLASS OF TUSKEGEE CADETS, TUSKEGEE AIR FIELD, 1941"
       },
       {
         "src": "img/tuskegee-details/4-Tuskegee.png",
-        "caption": "Detail Image 4"
+        "title": "In Training",
+        "caption":
+          "The Tuskegee Airmen were dedicated, patriotic young men who become the United States’ first black military airmen. In 1941, after passing rigorous entrance exams, the first group of African American aviation cadets began their training at Tuskegee Army Air Field in Alabama.",
+        "credit": "FIRST CLASS OF TUSKEGEE CADETS, TUSKEGEE AIR FIELD, 1941"
       },
       {
         "src": "img/tuskegee-details/5-Tuskegee.png",
-        "caption": "Detail Image 5"
+        "title": "In Training",
+        "caption":
+          "The Tuskegee Airmen were dedicated, patriotic young men who become the United States’ first black military airmen. In 1941, after passing rigorous entrance exams, the first group of African American aviation cadets began their training at Tuskegee Army Air Field in Alabama.",
+        "credit": "FIRST CLASS OF TUSKEGEE CADETS, TUSKEGEE AIR FIELD, 1941"
       }
-    ],
-    "learn_more":
-      "Learn More Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Learn More Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Learn More Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Learn More Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Learn More Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Learn More Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Learn More Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Learn More Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    ]
   },
   {
     "id": 1,
-    "person": "Chelsey Adams2",
-    "label": "Phillipines2",
+    "person": "MACK HOPKINS",
+    "label": "Flight Instructor",
     "thumbnail": "img/carousel/Hopkins.png",
-    "title": "Bataan Death March and Hellships2",
-    "war": "Phillipine American War2",
     "detailImages": [
       {
         "src": "img/tuskegee-details/1-Tuskegee.png",
         "title": "Wiley Graduate",
         "caption":
           "Mack Hopkins grew up in Marshall, Texas. His parents taught at Wiley University. In 1942, Mack graduated from Wiley. Soon afterwards, he qualified to join the Tuskegee Airmen.",
-        "credit": "WILEY  GRADUATING  CLASS,  1942|HCHM  COLLECTIONS"
+        "credit": "WILEY GRADUATING CLASS, 1942 | HCHM COLLECTIONS"
       },
       { "src": "http://lorempixel.com/400/500/", "caption": "Detail Image 2" },
       { "src": "http://lorempixel.com/200/500/", "caption": "Detail Image 3" }
-    ],
-    "learn_more":
-      "Learn More2 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    ]
   },
   {
     "id": 2,
-    "person": "Chelsey Adams2",
-    "city": "Balanga2",
-    "country": "Phillipines2",
-    "thumbnail": "img/carousel/Johnson.png",
-    "title": "Bataan Death March and Hellships2",
-    "war": "Phillipine American War2",
+    "person": "ROMEO WILLIAMS",
+    "label": "Fighter Pilot",
+    "thumbnail": "img/carousel/Williams.png",
     "detailImages": [
       { "src": "http://lorempixel.com/500/500/", "caption": "Detail Image 1" },
       { "src": "http://lorempixel.com/400/500/", "caption": "Detail Image 2" },
       { "src": "http://lorempixel.com/200/500/", "caption": "Detail Image 3" }
-    ],
-    "learn_more":
-      "Learn More2 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    ]
   },
   {
     "id": 3,
-    "person": "Chelsey Adams2",
-    "city": "Balanga2",
-    "country": "Phillipines2",
+    "person": "FRED WEATHERSBY",
+    "label": "Flight Crew",
     "thumbnail": "img/carousel/Weathersby.png",
-    "title": "Bataan Death March and Hellships2",
-    "war": "Phillipine American War2",
     "detailImages": [
       { "src": "http://lorempixel.com/500/500/", "caption": "Detail Image 1" },
       { "src": "http://lorempixel.com/400/500/", "caption": "Detail Image 2" },
@@ -89,10 +86,9 @@
   },
   {
     "id": 4,
-    "person": "Chelsey Adams2",
-    "city": "Balanga2",
-    "country": "Phillipines2",
-    "thumbnail": "img/carousel/Williams.png",
+    "person": "CHARLIE JOHNSON",
+    "label": "Bomber Pilot",
+    "thumbnail": "img/carousel/Johnson.png",
     "title": "Bataan Death March and Hellships2",
     "war": "Phillipine American War2",
     "detailImages": [

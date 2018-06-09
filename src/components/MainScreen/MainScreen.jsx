@@ -12,19 +12,26 @@ const propTypes = {
   sites: PropTypes.arrayOf(SiteSchema).isRequired,
   selectedSite: SiteSchema.isRequired,
   onSiteTapped: PropTypes.func.isRequired,
-  onSiteChanged: PropTypes.func.isRequired
+  onSiteChanged: PropTypes.func.isRequired,
+  titleImageURL: PropTypes.string
+};
+
+const defaultProps = {
+  titleImageURL: "img/main-screen/FlyingHigherTitle.png"
 };
 
 const MainScreen = props => {
-  const { sites, selectedSite, onSiteTapped, onSiteChanged } = props;
+  const {
+    sites,
+    selectedSite,
+    onSiteTapped,
+    onSiteChanged,
+    titleImageURL
+  } = props;
   return (
     <div className="mainScreen">
       <div className="titleImage">
-        <img src="img/Header01-HCHM.png" alt="Global Connections" />
-        <img
-          src="img/Header02-GlobalConnections.png"
-          alt="Global Connections"
-        />
+        <img width="100%" src={titleImageURL} alt="title" />
       </div>
       <div className="bg" />
       {sites[0].top // If I have locations on the map
@@ -48,4 +55,5 @@ const MainScreen = props => {
 };
 
 MainScreen.propTypes = propTypes;
+MainScreen.defaultProps = defaultProps;
 export default MainScreen;

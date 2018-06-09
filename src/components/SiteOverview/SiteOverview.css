@@ -1,0 +1,11 @@
+.siteOverview {
+  padding-bottom: 1rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.siteOverview > div {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}

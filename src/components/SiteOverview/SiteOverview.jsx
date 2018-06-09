@@ -1,5 +1,7 @@
-import React, { Fragment } from "react";
+import React from "react";
 import PropTypes from "prop-types";
+
+import "./SiteOverview.css";
 
 const propTypes = {
   person: PropTypes.string.isRequired,
@@ -9,11 +11,11 @@ const propTypes = {
 const SiteOverview = props => {
   const { person, label } = props;
   return (
-    <Fragment>
+    <div className="siteOverview">
       <div className="person">{person}</div>
       <img src="img/Line-SingleWhite.png" alt="" className="separator" />
-      <div className="location">{label}</div>
-    </Fragment>
+      <div className="label">{label}</div>
+    </div>
   );
 };
 

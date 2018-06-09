@@ -1,0 +1,21 @@
+.intro {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 70%;
+  color: #d9d0ad;
+  font-family: LiberationSans;
+}
+
+.introText {
+  padding: 1rem 0rem;
+  font-weight: 600;
+  font-size: 23pt;
+}
+.introDetailsText {
+  padding: 1rem 1rem;
+  font-size: 18pt;
+}
+.introDetails {
+  display: flex;
+}

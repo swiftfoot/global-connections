@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import Slider from "react-slick";
 import React from "react";
+import _ from "lodash";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -22,8 +23,8 @@ class SiteCarousel extends React.Component {
     visible: true
   };
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.settings = {
       dots: false,
       infinite: true,
@@ -36,7 +37,7 @@ class SiteCarousel extends React.Component {
       autoplay: true,
       autoplaySpeed: 5000,
       focusOnSelect: true,
-      initialSlide: 2
+      initialSlide: _.findIndex(props.sites, props.selectedSite)
     };
   }
 

@@ -8,8 +8,9 @@
 }
 
 .titleImage {
-  z-index: -1;
+  z-index: 1;
   position: relative;
+  width: 100%;
 }
 
 .bg {
@@ -18,10 +19,10 @@
   right: 0;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: 0;
   background-image: url("../../img/Background.png");
   background-repeat: no-repeat; /*Avoid the image to repeat*/
-  background-size: cover; /*Make the image full size*/
+  background-size: 100% 100%; /*Make the image full size*/
   background-position: center; /*Center the img*/
 }
