@@ -6,6 +6,6 @@ export default {
   component: SiteDetails,
   props: {
     selectedSite: sites[0],
-    onCloseSite: site => console.log(`close site ${JSON.stringify(site)}`)
+    onCloseSite: () => console.log(`close site `)
   }
 };

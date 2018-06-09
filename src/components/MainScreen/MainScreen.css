@@ -1,28 +1,12 @@
-.app {
+.mainScreen {
   min-height: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 .titleImage {
-  z-index: 1;
   position: relative;
   width: 100%;
-}
-
-.bg {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 0;
-  background-image: url("../../img/Background.png");
-  background-repeat: no-repeat; /*Avoid the image to repeat*/
-  background-size: 100% 100%; /*Make the image full size*/
-  background-position: center; /*Center the img*/
 }

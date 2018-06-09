@@ -10,8 +10,3 @@ body {
 #root {
   min-height: 100%;
 }
-
-@font-face {
-  font-family: GhostLight;
-  src: url("fonts/Ghostlight-Regular.ttf");
-}

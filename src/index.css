@@ -8,7 +8,20 @@ body {
 #root {
   width: 100%;
   height: 100vh;
-  background-color: black;
+}
+
+.bg {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url("./img/Background.png");
+  background-repeat: no-repeat; /*Avoid the image to repeat*/
+  background-size: 100% 100%; /*Make the image full size*/
+  background-position: center; /*Center the img*/
 }
 
 :focus {
@@ -18,6 +31,11 @@ body {
 @font-face {
   font-family: LiberationSans;
   src: url(./fonts/LiberationSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: FranklinGothicBook;
+  src: url(./fonts/franklingothic-book.otf);
 }
 
 @font-face {

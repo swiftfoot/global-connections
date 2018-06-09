@@ -28,6 +28,7 @@
   height: 200px;
   transition: scale 300ms ease;
   color: white;
+  cursor: pointer;
 }
 
 .slick-center {

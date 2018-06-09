@@ -14,6 +14,7 @@ const Intro = props => (
     <div className="introText">{props.intro}</div>
     <div className="introDetails">
       <div className="introDetailsText">{props.details}</div>
+      <img src="img/intro/TextSeparatorBars.png" alt="" />
       <div className="introDetailsText">{props.callToAction}</div>
     </div>
   </div>

@@ -48,14 +48,14 @@ class SiteDetails extends Component {
             {...selectedSite.detailImages[imageIndex]}
             onMoreDetails={this.toggleMoreDetails}
           />
-          <img
-            src="img/Button-Close-X.png"
-            alt="Close"
-            className="closeButton"
-            onClick={onCloseSite}
-            onTouchStart={onCloseSite}
-          />
         </div>
+        <img
+          src="img/site-details/Button-Close-X.png"
+          alt="Close"
+          className="closeButton"
+          onClick={onCloseSite}
+          onTouchStart={onCloseSite}
+        />
       </div>
     );
   }

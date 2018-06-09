@@ -2,9 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import SiteCarousel from "../../components/SiteCarousel/SiteCarousel";
-
 import SiteStar from "../../components/SiteStar/SiteStar";
 import SiteSchema from "../../schemas/site";
+import Intro from "../../components/Intro/Intro";
+
+import introJson from "../../sites/intro.json";
 
 import "./MainScreen.css";
 
@@ -33,7 +35,8 @@ const MainScreen = props => {
       <div className="titleImage">
         <img width="100%" src={titleImageURL} alt="title" />
       </div>
-      <div className="bg" />
+
+      <Intro {...introJson} />
       {sites[0].top // If I have locations on the map
         ? sites.map(site => (
           <SiteStar

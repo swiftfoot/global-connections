@@ -14,12 +14,37 @@ class App extends Component {
     isSiteOpen: false
   };
 
+  componentDidMount() {
+    this.clickListener = document.addEventListener("click", this.waitForIdle);
+    this.tapListener = document.addEventListener("touchEnd", this.waitForIdle);
+  }
+
+  componentWillUnmount() {
+    if (this.idleTimeout) {
+      clearTimeout(this.idleTimeout);
+    }
+    document.removeEventListener(this.clickListener);
+    document.removeEventListener(this.tapListener);
+  }
+
+  waitForIdle = () => {
+    if (this.idleTimeout) {
+      clearTimeout(this.idleTimeout);
+    }
+    this.idleTimeout = setTimeout(this.resetState, 30000);
+  };
+
+  resetState = () => {
+    this.setState({ isSiteOpen: false, isPullShowing: true });
+  };
+
   handleSiteToggle = () => {
     this.setState(state => ({ isSiteOpen: !state.isSiteOpen }));
   };
 
   handleSiteChanged = site => {
-    console.log(`site: ${JSON.stringify(site)}`);
+    this.setState({ selectedSite: sites[site] });
+    setTimeout(this.handleSiteToggle, 1500);
   };
 
   handleTogglePull = () => {

@@ -2,18 +2,19 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  width: 70%;
+  width: 65%;
   color: #d9d0ad;
   font-family: LiberationSans;
 }
 
 .introText {
-  padding: 1rem 0rem;
+  padding: 1rem 0rem 3rem 0rem;
   font-weight: 600;
   font-size: 23pt;
+  text-align: center;
 }
 .introDetailsText {
-  padding: 1rem 1rem;
+  padding: 2rem 4rem;
   font-size: 18pt;
 }
 .introDetails {
