@@ -9,11 +9,12 @@ const propTypes = {
   caption: PropTypes.string.isRequired,
   credit: PropTypes.string.isRequired,
   learnMore: PropTypes.string,
-  onMoreDetails: PropTypes.func.isRequired
+  onMoreDetails: PropTypes.func
 };
 
 const defaultProps = {
-  learnMore: undefined
+  learnMore: undefined,
+  onMoreDetails: undefined
 };
 
 const Details = props => {
@@ -29,9 +30,9 @@ const Details = props => {
 
   return (
     <div className="rightDetails">
-      <div className="locationDetails ">{`${label}`}</div>
+      <div className="locationDetails label ">{`${label}`}</div>
       <img className="separator" src="img/Lines-TwoYellowDividers.png" alt="" />
-      <div className="personDetails">{person}</div>
+      <div className="personDetails person">{person}</div>
       <img className="separator" src="img/Lines-TwoYellowDividers.png" alt="" />
       <div className="imageDetails">
         <p className="imageTitle">{title}</p>

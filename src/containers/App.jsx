@@ -39,12 +39,14 @@ class App extends Component {
   };
 
   handleSiteToggle = () => {
-    this.setState(state => ({ isSiteOpen: !state.isSiteOpen }));
+    setTimeout(
+      () => this.setState(state => ({ isSiteOpen: !state.isSiteOpen })),
+      !this.state.isSiteOpen ? 1000 : 0 // trigger with slight delay when opening
+    );
   };
 
   handleSiteChanged = site => {
     this.setState({ selectedSite: sites[site] });
-    setTimeout(this.handleSiteToggle, 1500);
   };
 
   handleTogglePull = () => {

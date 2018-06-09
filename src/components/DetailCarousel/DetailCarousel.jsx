@@ -37,7 +37,7 @@ const DetailCarousel = props => {
     <div className="detailImageCarousel">
       <Slider {...settings} afterChange={onImageChanged}>
         {detailImages.map((imageDetails, key) => (
-          <div className="imageDetails">
+          <div key={`details-${imageDetails.caption}`}>
             <img
               className="image"
               draggable="false"
