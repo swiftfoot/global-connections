@@ -38,23 +38,24 @@ class SiteDetails extends Component {
 
     return (
       <div className="siteDetails">
-        <div className="siteDetailBackground" />
-        <DetailCarousel
-          detailImages={selectedSite.detailImages}
-          onImageChanged={this.onImageChanged}
-        />
-        <Details
-          {...selectedSite}
-          {...selectedSite.detailImages[imageIndex]}
-          onMoreDetails={this.toggleMoreDetails}
-        />
-        <img
-          src="img/Button-Close-X.png"
-          alt="Close"
-          className="closeButton"
-          onClick={onCloseSite}
-          onTouchStart={onCloseSite}
-        />
+        <div className="siteDetailBackground">
+          <DetailCarousel
+            detailImages={selectedSite.detailImages}
+            onImageChanged={this.onImageChanged}
+          />
+          <Details
+            {...selectedSite}
+            {...selectedSite.detailImages[imageIndex]}
+            onMoreDetails={this.toggleMoreDetails}
+          />
+          <img
+            src="img/Button-Close-X.png"
+            alt="Close"
+            className="closeButton"
+            onClick={onCloseSite}
+            onTouchStart={onCloseSite}
+          />
+        </div>
       </div>
     );
   }

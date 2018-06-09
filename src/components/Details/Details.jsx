@@ -29,9 +29,9 @@ const Details = props => {
 
   return (
     <div className="rightDetails">
-      <div className="locationDetails location">{`${label}`}</div>
+      <div className="locationDetails ">{`${label}`}</div>
       <img className="separator" src="img/Lines-TwoYellowDividers.png" alt="" />
-      <div className="personDetails person">{person}</div>
+      <div className="personDetails">{person}</div>
       <img className="separator" src="img/Lines-TwoYellowDividers.png" alt="" />
       <div className="imageDetails">
         <p className="title">{title}</p>

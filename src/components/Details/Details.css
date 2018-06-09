@@ -1,8 +1,10 @@
 .rightDetails {
   width: 100%;
+  padding-left: 2rem;
+  padding-right: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   height: 95%;
   overflow-x: hidden;
 }
@@ -15,26 +17,32 @@
 }
 
 .locationDetails {
-  padding: 3rem 0rem;
+  padding: 3rem 4rem;
   font-weight: 500;
+  color: #ffffff;
+  font-size: 22pt;
+  font-family: GhostLight;
 }
 
 .personDetails {
-  text-align: center;
   width: 85%;
   text-transform: uppercase;
-  padding: 3rem 0rem;
+  padding: 3rem 4rem;
   font-weight: 500;
+  color: #f58f00;
+  text-transform: uppercase;
+  font-size: 28pt;
+  font-family: GhostLight;
 }
 .separator {
-  width: calc(100% - 3rem);
+  width: calc(100% - 7rem);
   margin: 0rem 2rem;
   display: block;
 }
 .imageDetails {
   color: #d9d0ad;
   font-family: Helvetica Neue;
-  padding: 1rem 3rem;
+  padding: 1rem 4rem;
   overflow-y: auto;
 }
 .title {
@@ -48,7 +56,7 @@
 .credit {
   color: #7c7c7c;
   font-size: 16px;
-  padding: 2rem 3rem;
+  padding: 2rem 4rem;
   align-self: flex-start;
 }
 .moreDetailsImage {
