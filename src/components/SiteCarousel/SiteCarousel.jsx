@@ -52,11 +52,7 @@ class SiteCarousel extends React.Component {
     const style = { visibility: visible ? "visible" : "hidden" };
     return (
       <div className="siteCarouselPositioner" style={style}>
-        <SiteOverview
-          person={selectedSite.person}
-          city={selectedSite.city}
-          country={selectedSite.country}
-        />
+        <SiteOverview person={selectedSite.person} label={selectedSite.label} />
         <div className="siteCarouselBackground" />
         <div className="siteCarousel">
           <Slider {...this.settings} afterChange={siteChanged}>

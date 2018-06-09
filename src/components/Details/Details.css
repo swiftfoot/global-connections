@@ -45,10 +45,10 @@
   padding: 1rem 4rem;
   overflow-y: auto;
 }
-.title {
+.imageTitle {
   font-size: 24pt;
 }
-.caption {
+.imageC aption {
   font-size: 20px;
   height: 260px;
 }

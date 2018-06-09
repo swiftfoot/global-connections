@@ -3,19 +3,16 @@ import PropTypes from "prop-types";
 
 const propTypes = {
   person: PropTypes.string.isRequired,
-  city: PropTypes.string.isRequired,
-  country: PropTypes.string.isRequired
+  label: PropTypes.string.isRequired
 };
 
 const SiteOverview = props => {
-  const { person, city, country } = props;
+  const { person, label } = props;
   return (
     <Fragment>
       <div className="person">{person}</div>
       <img src="img/Line-SingleWhite.png" alt="" className="separator" />
-      <div className="location">
-        {city}, {country}
-      </div>
+      <div className="location">{label}</div>
     </Fragment>
   );
 };

@@ -1,52 +1,50 @@
 import React, { Component } from "react";
 
 import "./App.css";
-import SiteCarousel from "../components/SiteCarousel/SiteCarousel";
-import SiteDetail from "../components/SiteDetails/SiteDetails";
-import SiteStar from "../components/SiteStar/SiteStar";
-import sitesFile from "../sites/globalSites.json";
+
+import sites from "../sites/globalSites.json";
+import MainScreen from "../components/MainScreen/MainScreen";
+import PullScreen from "../components/PullScreen/PullScreen";
+import SiteDetails from "../components/SiteDetails/SiteDetails";
 
 class App extends Component {
   state = {
-    sites: sitesFile,
-    selectedSite: sitesFile[0]
+    selectedSite: sites[0],
+    isPullShowing: true,
+    isSiteOpen: false
   };
 
-  handleSiteToggle = isOpen => {
-    console.log(` isOpen: ${isOpen}}`);
+  handleSiteToggle = () => {
+    this.setState(state => ({ isSiteOpen: !state.isSiteOpen }));
   };
 
   handleSiteChanged = site => {
     console.log(`site: ${JSON.stringify(site)}`);
   };
 
+  handleTogglePull = () => {
+    this.setState(state => ({ isPullShowing: !state.isPullShowing }));
+  };
+
   render() {
-    const { selectedSite, sites } = this.state;
+    const { isPullShowing, isSiteOpen, selectedSite } = this.state;
     return (
       <div className="app">
-        <div className="titleImage app">
-          <img src="img/Header01-HCHM.png" alt="Global Connections" />
-          <img
-            src="img/Header02-GlobalConnections.png"
-            alt="Global Connections"
+        {isPullShowing ? (
+          <PullScreen onClick={this.handleTogglePull} />
+        ) : !isSiteOpen ? (
+          <MainScreen
+            sites={sites}
+            selectedSite={selectedSite}
+            onSiteTapped={this.handleSiteToggle}
+            onSiteChanged={this.handleSiteChanged}
           />
-        </div>
-        <div className="bg" />
-        {sites.map(site => (
-          <SiteStar
-            top={site.top}
-            left={site.left}
-            key={`sitestar-${site.id}`}
-            active={selectedSite === site}
+        ) : (
+          <SiteDetails
+            onCloseSite={this.handleSiteToggle}
+            selectedSite={selectedSite}
           />
-        ))}
-        <SiteCarousel
-          sites={sites}
-          selectedSiteIndex={selectedSite.id}
-          siteTapped={this.handleSiteToggle}
-          siteChanged={this.handleSiteChanged}
-        />
-        <SiteDetail />
+        )}
       </div>
     );
   }

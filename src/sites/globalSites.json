@@ -1,10 +1,8 @@
 [
   {
     "id": 0,
-    "person": "Mack Hopkins",
-    "label": "Flight Instructor",
-    "top": "20px",
-    "left": "200px",
+    "person": "THE TUSKEGEE AIRMEN",
+    "label": "Who Were They?",
     "thumbnail": "img/carousel/TuskegeeAirmen.png",
     "title": "Bataan Death March and Hellships",
     "war": "Phillipine American War",
@@ -39,15 +37,18 @@
   {
     "id": 1,
     "person": "Chelsey Adams2",
-    "city": "Balanga2",
-    "country": "Phillipines2",
-    "top": "200px",
-    "left": "300px",
+    "label": "Phillipines2",
     "thumbnail": "img/carousel/Hopkins.png",
     "title": "Bataan Death March and Hellships2",
     "war": "Phillipine American War2",
     "detailImages": [
-      { "src": "http://lorempixel.com/500/500/", "caption": "Detail Image 1" },
+      {
+        "src": "img/tuskegee-details/1-Tuskegee.png",
+        "title": "Wiley Graduate",
+        "caption":
+          "Mack Hopkins grew up in Marshall, Texas. His parents taught at Wiley University. In 1942, Mack graduated from Wiley. Soon afterwards, he qualified to join the Tuskegee Airmen.",
+        "credit": "WILEY  GRADUATING  CLASS,  1942|HCHM  COLLECTIONS"
+      },
       { "src": "http://lorempixel.com/400/500/", "caption": "Detail Image 2" },
       { "src": "http://lorempixel.com/200/500/", "caption": "Detail Image 3" }
     ],
@@ -59,8 +60,6 @@
     "person": "Chelsey Adams2",
     "city": "Balanga2",
     "country": "Phillipines2",
-    "top": "200px",
-    "left": "300px",
     "thumbnail": "img/carousel/Johnson.png",
     "title": "Bataan Death March and Hellships2",
     "war": "Phillipine American War2",
@@ -77,8 +76,6 @@
     "person": "Chelsey Adams2",
     "city": "Balanga2",
     "country": "Phillipines2",
-    "top": "200px",
-    "left": "300px",
     "thumbnail": "img/carousel/Weathersby.png",
     "title": "Bataan Death March and Hellships2",
     "war": "Phillipine American War2",
@@ -95,8 +92,6 @@
     "person": "Chelsey Adams2",
     "city": "Balanga2",
     "country": "Phillipines2",
-    "top": "200px",
-    "left": "300px",
     "thumbnail": "img/carousel/Williams.png",
     "title": "Bataan Death March and Hellships2",
     "war": "Phillipine American War2",

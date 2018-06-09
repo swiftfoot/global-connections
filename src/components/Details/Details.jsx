@@ -34,8 +34,8 @@ const Details = props => {
       <div className="personDetails">{person}</div>
       <img className="separator" src="img/Lines-TwoYellowDividers.png" alt="" />
       <div className="imageDetails">
-        <p className="title">{title}</p>
-        <div className="caption">{caption}</div>
+        <p className="imageTitle">{title}</p>
+        <div className="imageCaption">{caption}</div>
       </div>
       <img className="separator" src="img/Line-CreamDotted.png" alt="" />
       <div className="credit">{credit}</div>
