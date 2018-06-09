@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 
 import "./App.css";
 
@@ -31,7 +31,7 @@ class App extends Component {
     if (this.idleTimeout) {
       clearTimeout(this.idleTimeout);
     }
-    this.idleTimeout = setTimeout(this.resetState, 30000);
+    this.idleTimeout = setTimeout(this.resetState, 180000);
   };
 
   resetState = () => {
@@ -45,7 +45,7 @@ class App extends Component {
     );
   };
 
-  handleSiteChanged = site => {
+  handleSiteChanged = (oldSite, site) => {
     this.setState({ selectedSite: sites[site] });
   };
 
@@ -59,18 +59,22 @@ class App extends Component {
       <div className="app">
         {isPullShowing ? (
           <PullScreen onClick={this.handleTogglePull} />
-        ) : !isSiteOpen ? (
-          <MainScreen
-            sites={sites}
-            selectedSite={selectedSite}
-            onSiteTapped={this.handleSiteToggle}
-            onSiteChanged={this.handleSiteChanged}
-          />
         ) : (
-          <SiteDetails
-            onCloseSite={this.handleSiteToggle}
-            selectedSite={selectedSite}
-          />
+          <Fragment>
+            {!isSiteOpen ? (
+              <MainScreen
+                sites={sites}
+                selectedSite={selectedSite}
+                onSiteTapped={this.handleSiteToggle}
+                onSiteChanged={this.handleSiteChanged}
+              />
+            ) : null}
+            <SiteDetails
+              isOpen={isSiteOpen}
+              onCloseSite={this.handleSiteToggle}
+              selectedSite={selectedSite}
+            />
+          </Fragment>
         )}
       </div>
     );

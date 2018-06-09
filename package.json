@@ -10,6 +10,7 @@
     "react-dom": "^16.4.0",
     "react-redux": "^5.0.5",
     "react-slick": "latest",
+    "react-transition-group": "^2.3.1",
     "redux": "^4.0.0",
     "slick-carousel": "^1.8.1"
   },

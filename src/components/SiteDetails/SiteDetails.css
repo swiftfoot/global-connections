@@ -18,6 +18,26 @@
   display: flex;
 }
 
+.bottom-enter {
+  transform: translateY(100%);
+}
+.bottom-enter-active {
+  transform: translateY(0%);
+  transition: transform 1000ms ease-in-out;
+}
+.bottom-enter-done {
+  transform: translateY(0%);
+}
+.bottom-exit {
+  transform: translateY(0%);
+}
+.bottom-exit-active {
+  transform: translateY(100%);
+  transition: transform 1000ms ease-in-out;
+}
+.bottom-exit-done {
+  transform: translateY(100%);
+}
 .closeButton {
   position: absolute;
   right: 50px;
@@ -28,7 +48,6 @@
 
 .imageDetails {
   height: 600px;
-  width: 600px;
 }
 
 .image {

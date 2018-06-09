@@ -7,7 +7,7 @@ class MainScreen extends Component {
   state = {
     selectedSite: sites[0]
   };
-  handleSiteChanged = site => {
+  handleSiteChanged = (oldsite, site) => {
     this.setState({ selectedSite: sites[site] });
   };
   render() {

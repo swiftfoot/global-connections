@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 import "./SiteCarousel.css";
 import SiteOverview from "../SiteOverview/SiteOverview";
+import AllSitesOverview from "../AllSitesOverview/AllSitesOverview";
 
 import SiteSchema from "../../schemas/site";
 
@@ -29,8 +30,8 @@ class SiteCarousel extends React.Component {
       dots: false,
       infinite: true,
       arrows: false,
-      speed: 200,
       slidesToShow: 5,
+      speed: 200,
       slidesToScroll: 1,
       centerMode: true,
       centerPadding: "0px",
@@ -53,10 +54,17 @@ class SiteCarousel extends React.Component {
     const style = { visibility: visible ? "visible" : "hidden" };
     return (
       <div className="siteCarouselPositioner" style={style}>
-        <SiteOverview person={selectedSite.person} label={selectedSite.label} />
+        {sites.length !== this.settings.slidesToShow ? (
+          <SiteOverview
+            person={selectedSite.person}
+            label={selectedSite.label}
+          />
+        ) : (
+          <AllSitesOverview sites={sites} selectedSite={selectedSite} />
+        )}
         <div className="siteCarouselBackground" />
         <div className="siteCarousel">
-          <Slider {...this.settings} afterChange={siteChanged}>
+          <Slider {...this.settings} beforeChange={siteChanged}>
             {sites.map((site, key) => (
               <div
                 className="slide"

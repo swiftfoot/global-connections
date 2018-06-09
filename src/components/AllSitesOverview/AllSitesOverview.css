@@ -1,0 +1,57 @@
+.allSitesOverview {
+  display: flex;
+  flex-flow: column;
+  position: relative;
+}
+
+.allSitesOverviewCol {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 20%;
+}
+
+.allSitesOverviewRow {
+  display: flex;
+  width: 95%;
+  margin: auto;
+  justify-content: space-around;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.inline-separator {
+  transform: translateY(-30px);
+}
+
+.person-small {
+  color: #f58f00;
+  text-transform: uppercase;
+  font-size: 18pt;
+  font-family: GhostLight;
+  text-shadow: black 0.1em 0.1em 0.4em;
+}
+
+.label-small {
+  color: #ffffff;
+  font-size: 14pt;
+  font-family: GhostLight;
+  letter-spacing: 2px;
+  text-shadow: black 0.1em 0.1em 0.4em;
+}
+
+.person-medium {
+  color: #f58f00;
+  text-transform: uppercase;
+  font-size: 22pt;
+  font-family: GhostLight;
+  text-shadow: black 0.1em 0.1em 0.4em;
+}
+
+.label-medium {
+  color: #ffffff;
+  font-size: 16pt;
+  font-family: GhostLight;
+  letter-spacing: 2px;
+  text-shadow: black 0.1em 0.1em 0.4em;
+}
