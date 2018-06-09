@@ -24,7 +24,6 @@ const settings = {
   slidesToShow: 1,
   autoplay: true,
   autoplaySpeed: 10000,
-  afterChange: this.imageChanged,
   variableWidth: true,
   adaptiveHeight: true,
   centerMode: true,
