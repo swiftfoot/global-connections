@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export default {
+export default PropTypes.shape({
   id: PropTypes.number,
   person: PropTypes.string,
   city: PropTypes.string,
@@ -17,4 +17,4 @@ export default {
     })
   ),
   learn_more: PropTypes.string,
-};
+});

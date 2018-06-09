@@ -2,4 +2,46 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+}
+
+:focus {
+  outline: none;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #343333;
+  opacity: 0.75;
+  border-radius: 7px;
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+  border-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: url("img/ScrollbarSlider.png");
+  background-repeat: no-repeat; /*Avoid the image to repeat*/
+  background-size: cover; /*Make the image full size*/
+  background-position: center; /*Center the img*/
+  border-radius: 10px;
+}
+
+.slick-dots li button:before {
+  color: white;
+  opacity: 1;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 0.75;
+  color: #f58f00;
 }

@@ -1,10 +1,13 @@
-import PropTypes from 'prop-types';
-import Slider from 'react-slick';
-import React from 'react';
+import PropTypes from "prop-types";
+import Slider from "react-slick";
+import React from "react";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-import './SiteCarousel.css';
+import "./SiteCarousel.css";
+import SiteOverview from "../SiteOverview/SiteOverview";
 
-import SiteSchema from '../../schemas/site';
+import SiteSchema from "../../schemas/site";
 
 class SiteCarousel extends React.Component {
   static propTypes = {
@@ -12,80 +15,16 @@ class SiteCarousel extends React.Component {
     siteTapped: PropTypes.func.isRequired,
     siteChanged: PropTypes.func.isRequired,
     visible: PropTypes.bool,
-    selectedSite: SiteSchema.isRequired,
+    selectedSite: SiteSchema.isRequired
   };
 
   static defaultProps = {
-    visible: true,
+    visible: true
   };
 
-  state = {
-    autoScroll: true,
-  };
-
-  componentDidMount() {
-    // Check every 2 seconds whether autoscroll needed
-    this.autoPlayInterval = setInterval(() => {
-      if (this.state.autoScroll) {
-        this.slider.slickNext();
-      }
-    }, 5000);
-    document.body.addEventListener(
-      'touchstart',
-      () => {
-        this.setAutoScroll(false);
-      },
-      false
-    );
-    document.body.addEventListener(
-      'click',
-      () => {
-        this.setAutoScroll(false);
-      },
-      false
-    );
-  }
-  /**
-   * Need to decide whether to move the slider or launch the site
-   */
-  onDoubleClick = e => {
-    const site = parseInt(e.target.id, 10);
-    if (this.props.sites[site] === this.props.selectedSite) {
-      this.props.siteTapped(this.props.sites[site]);
-    } else {
-      this.slider.slickGoTo(site);
-    }
-  };
-
-  setRef = slider => {
-    this.slider = slider;
-  };
-
-  setAutoScroll(autoScroll) {
-    this.setState({
-      autoScroll,
-    });
-    // Set a timer for 30 seconds to restart autoscroll
-    if (!autoScroll) {
-      this.resetTimeout();
-    }
-  }
-
-  resetTimeout() {
-    clearTimeout(this.autoScrollTimeout);
-
-    this.autoScrollTimeout = setTimeout(() => {
-      if (this.props.visible) {
-        this.setAutoScroll(true);
-      } else {
-        this.resetTimeout();
-      }
-    }, 30000);
-  }
-
-  render() {
-    // TODO: Convert onDoubleClick to onTouchTap and try swiping
-    const settings = {
+  constructor() {
+    super();
+    this.settings = {
       dots: false,
       infinite: true,
       arrows: false,
@@ -93,26 +32,39 @@ class SiteCarousel extends React.Component {
       slidesToShow: 5,
       slidesToScroll: 1,
       centerMode: true,
-      centerPadding: '0px',
-      afterChange: this.props.siteChanged.bind(this),
+      centerPadding: "0px",
+      autoplay: true,
+      autoplaySpeed: 5000,
+      focusOnSelect: true,
+      initialSlide: 2
     };
-    const style = { visibility: this.props.visible ? 'visible' : 'hidden' };
+  }
+
+  render() {
+    const {
+      visible,
+      siteChanged,
+      selectedSite,
+      siteTapped,
+      sites
+    } = this.props;
+
+    const style = { visibility: visible ? "visible" : "hidden" };
     return (
       <div className="siteCarouselPositioner" style={style}>
-        <div className="person">{this.props.selectedSite.person}</div>
-        <img src="img/Line-SingleWhite.png" alt="" className="separator" />
-        <div className="location">
-          {this.props.selectedSite.city}, {this.props.selectedSite.country}{' '}
-        </div>
+        <SiteOverview
+          person={selectedSite.person}
+          city={selectedSite.city}
+          country={selectedSite.country}
+        />
         <div className="siteCarouselBackground" />
         <div className="siteCarousel">
-          <Slider ref={this.setRef} {...settings}>
-            {this.props.sites.map((site, key) => (
+          <Slider {...this.settings} afterChange={siteChanged}>
+            {sites.map((site, key) => (
               <div
                 className="slide"
                 key={`div-${site.id}`}
-                onTouchStart={this.onDoubleClick}
-                onDoubleClick={this.onDoubleClick}
+                onDoubleClick={() => siteTapped(site.id)}
               >
                 <img
                   draggable="false"

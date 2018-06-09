@@ -1,19 +1,22 @@
 {
-	"parser": "babel-eslint",
-	"parserOptions": {
-		"sourceType": "module",
-		"ecmaFeatures": {
-			"jsx": true
-		}
-	},
-	"extends": ["airbnb", "prettier"],
-	"env": {
-		"jest": true,
-		"browser": true
-	},
-	"rules": {
-		"no-console": 0,
-		"no-tabs": 0,
-		"no-mixed-spaces-and-tabs": 0
-	}
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": ["airbnb", "prettier"],
+  "env": {
+    "jest": true,
+    "browser": true
+  },
+  "plugins": ["react"],
+  "rules": {
+    "no-console": 0,
+    "no-tabs": 0,
+    "no-mixed-spaces-and-tabs": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
+    "jsx-a11y/click-events-have-key-events": 0
+  }
 }
