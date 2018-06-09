@@ -70,7 +70,6 @@ class SiteCarousel extends React.Component {
                 className="slide"
                 key={`div-${site.id}`}
                 onClick={() => siteTapped(site.id)}
-                onTouchStart={() => siteTapped(site.id)}
               >
                 <img
                   draggable="false"

@@ -17,7 +17,7 @@
 }
 
 .locationDetails {
-  padding: 3rem 4rem;
+  padding: 4rem 4rem 2rem;
   font-weight: 500;
   color: #ffffff;
   font-size: 22pt;
@@ -27,7 +27,7 @@
 .personDetails {
   width: 85%;
   text-transform: uppercase;
-  padding: 3rem 4rem;
+  padding: 2rem 4rem;
   font-weight: 500;
   color: #f58f00;
   text-transform: uppercase;
@@ -42,16 +42,17 @@
 .imageDetails {
   color: #d9d0ad;
   font-family: FranklinGothicBook;
-  padding: 1rem 4rem;
+  padding: 0rem 4rem;
   overflow-y: auto;
 }
 .imageTitle {
   font-size: 24pt;
   font-family: LiberationSans;
+  margin: 1rem 0rem 1rem;
 }
 .imageCaption {
   font-size: 20px;
-  height: 260px;
+  height: 180px;
 }
 
 .credit {
