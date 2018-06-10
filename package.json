@@ -37,9 +37,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom && yarn run lint",
     "eject": "react-scripts eject",
-    "lint": "eslint src/** --ext .js,.jsx --fix",
+    "lint": "eslint src --ext .js,.jsx --fix",
     "cosmos": "cosmos",
     "cosmos:export": "cosmos-export"
   }

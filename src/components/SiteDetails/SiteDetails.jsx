@@ -43,7 +43,7 @@ class SiteDetails extends Component {
         mountOnEnter
         unmountOnExit
         in={isOpen}
-        timeout={2000}
+        timeout={1000}
         classNames="bottom"
       >
         <div className="siteDetails">
