@@ -63,7 +63,6 @@ class SiteDetails extends Component {
             alt="Close"
             className="closeButton"
             onClick={onCloseSite}
-            onTouchStart={onCloseSite}
           />
         </div>
       </CSSTransition>
