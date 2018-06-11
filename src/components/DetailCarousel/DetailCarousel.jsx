@@ -19,7 +19,7 @@ const propTypes = {
 const settings = {
   dots: true,
   infinite: true,
-  arrows: false,
+  arrows: true,
   speed: 200,
   slidesToShow: 1,
   autoplay: true,

@@ -2,21 +2,26 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  width: 65%;
+  padding: 0rem 365px;
   color: #d9d0ad;
   font-family: LiberationSans;
+}
+
+.introSeparator {
+  padding-left: 3px;
 }
 
 .introText {
   padding: 1rem 0rem 1.5rem 0rem;
   font-weight: 600;
-  font-size: 23pt;
+  font-size: 26px;
   text-align: center;
 }
 .introDetailsText {
-  padding: 1rem 4rem;
-  font-size: 18pt;
+  padding: 1rem 2rem;
+  font-size: 20px;
 }
 .introDetails {
   display: flex;
+  align-items: center;
 }

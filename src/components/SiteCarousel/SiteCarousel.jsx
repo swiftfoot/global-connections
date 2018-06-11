@@ -30,7 +30,7 @@ class SiteCarousel extends React.Component {
       dots: false,
       infinite: true,
       arrows: false,
-      slidesToShow: 5,
+      slidesToShow: 3,
       speed: 200,
       slidesToScroll: 1,
       centerMode: true,
@@ -63,7 +63,13 @@ class SiteCarousel extends React.Component {
           <AllSitesOverview sites={sites} selectedSite={selectedSite} />
         )}
         <div className="siteCarouselBackground" />
-        <div className="siteCarousel">
+        <div
+          className="siteCarousel"
+          style={{
+            width: `${this.settings.slidesToShow === 3 ? 65 : 95}%`,
+            left: `${this.settings.slidesToShow === 3 ? 3.5 : 3}%`
+          }}
+        >
           <Slider {...this.settings} beforeChange={siteChanged}>
             {sites.map((site, key) => (
               <div

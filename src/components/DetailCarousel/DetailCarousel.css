@@ -2,3 +2,19 @@
   width: 600px;
   margin: 80px;
 }
+
+.detailImageCarousel .slick-next,
+.slick-prev {
+  height: 100%;
+  width: 40px;
+}
+.detailImageCarousel .slick-next:active,
+.slick-prev:active {
+  outline: gray 2px solid;
+}
+.detailImageCarousel .slick-next {
+  right: -40px;
+}
+.detailImageCarousel .slick-prev {
+  left: -40px;
+}
