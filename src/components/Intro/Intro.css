@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  padding: 0rem 365px;
+  padding: 0rem 220px;
   color: #d9d0ad;
   font-family: LiberationSans;
 }
@@ -18,7 +18,7 @@
   text-align: center;
 }
 .introDetailsText {
-  padding: 1rem 2rem;
+  padding: 1rem;
   font-size: 20px;
 }
 .introDetails {
