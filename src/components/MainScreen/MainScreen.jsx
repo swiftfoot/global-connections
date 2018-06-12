@@ -5,6 +5,7 @@ import SiteCarousel from "../../components/SiteCarousel/SiteCarousel";
 import SiteStar from "../../components/SiteStar/SiteStar";
 import SiteSchema from "../../schemas/site";
 import Intro from "../../components/Intro/Intro";
+import TopTitle from "../../components/TopTitle/TopTitle";
 
 import introJson from "../../sites/intro.json";
 
@@ -15,13 +16,8 @@ const propTypes = {
   selectedSite: SiteSchema.isRequired,
   onSiteTapped: PropTypes.func.isRequired,
   onSiteChanged: PropTypes.func.isRequired,
-  titleImageURL: PropTypes.string,
-  titleText: PropTypes.string
-};
-
-const defaultProps = {
-  titleImageURL: "img/main-screen/FlyingHigherTitle.png",
-  titleText: "Flying Higher"
+  titleImageURL: PropTypes.string.isRequired,
+  titleText: PropTypes.string.isRequired
 };
 
 const MainScreen = props => {
@@ -35,11 +31,7 @@ const MainScreen = props => {
   } = props;
   return (
     <div className="mainScreen">
-      <div className="titleImage">
-        <img width="100%" src={titleImageURL} alt="title" />
-        <div className="titleText">{titleText}</div>
-      </div>
-
+      <TopTitle titleImageURL={titleImageURL} titleText={titleText} />
       <Intro {...introJson} />
       {sites[0].top // If I have locations on the map
         ? sites.map(site => (
@@ -62,5 +54,4 @@ const MainScreen = props => {
 };
 
 MainScreen.propTypes = propTypes;
-MainScreen.defaultProps = defaultProps;
 export default MainScreen;

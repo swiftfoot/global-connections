@@ -4,6 +4,7 @@ import { CSSTransition } from "react-transition-group";
 import DetailCarousel from "../DetailCarousel/DetailCarousel";
 import Details from "../Details/Details";
 import SiteSchema from "../../schemas/site";
+import TopTitle from "../TopTitle/TopTitle";
 import "./SiteDetails.css";
 
 class SiteDetails extends Component {
@@ -47,7 +48,9 @@ class SiteDetails extends Component {
         classNames="bottom"
       >
         <div className="siteDetails">
-          <div className="siteDetailBackground">
+          <TopTitle />
+          <div className="siteDetailContent">
+            <div className="siteDetailBackground" />
             <DetailCarousel
               detailImages={selectedSite.detailImages}
               onImageChanged={this.onImageChanged}
