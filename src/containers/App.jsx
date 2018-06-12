@@ -4,6 +4,7 @@ import "./App.css";
 
 import sites from "../sites/globalSites.json";
 import MainScreen from "../components/MainScreen/MainScreen";
+import TopTitle from "../components/TopTitle/TopTitle";
 import PullScreen from "../components/PullScreen/PullScreen";
 import SiteDetails from "../components/SiteDetails/SiteDetails";
 
@@ -61,6 +62,7 @@ class App extends Component {
           <PullScreen onClick={this.handleTogglePull} />
         ) : (
           <Fragment>
+            <TopTitle />
             {!isSiteOpen ? (
               <MainScreen
                 sites={sites}

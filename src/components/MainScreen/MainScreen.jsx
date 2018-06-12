@@ -5,7 +5,6 @@ import SiteCarousel from "../../components/SiteCarousel/SiteCarousel";
 import SiteStar from "../../components/SiteStar/SiteStar";
 import SiteSchema from "../../schemas/site";
 import Intro from "../../components/Intro/Intro";
-import TopTitle from "../../components/TopTitle/TopTitle";
 
 import introJson from "../../sites/intro.json";
 
@@ -15,23 +14,13 @@ const propTypes = {
   sites: PropTypes.arrayOf(SiteSchema).isRequired,
   selectedSite: SiteSchema.isRequired,
   onSiteTapped: PropTypes.func.isRequired,
-  onSiteChanged: PropTypes.func.isRequired,
-  titleImageURL: PropTypes.string.isRequired,
-  titleText: PropTypes.string.isRequired
+  onSiteChanged: PropTypes.func.isRequired
 };
 
 const MainScreen = props => {
-  const {
-    sites,
-    selectedSite,
-    onSiteTapped,
-    onSiteChanged,
-    titleImageURL,
-    titleText
-  } = props;
+  const { sites, selectedSite, onSiteTapped, onSiteChanged } = props;
   return (
     <div className="mainScreen">
-      <TopTitle titleImageURL={titleImageURL} titleText={titleText} />
       <Intro {...introJson} />
       {sites[0].top // If I have locations on the map
         ? sites.map(site => (
