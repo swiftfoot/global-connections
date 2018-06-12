@@ -15,11 +15,13 @@ const propTypes = {
   selectedSite: SiteSchema.isRequired,
   onSiteTapped: PropTypes.func.isRequired,
   onSiteChanged: PropTypes.func.isRequired,
-  titleImageURL: PropTypes.string
+  titleImageURL: PropTypes.string,
+  titleText: PropTypes.string
 };
 
 const defaultProps = {
-  titleImageURL: "img/main-screen/FlyingHigherTitle.png"
+  titleImageURL: "img/main-screen/FlyingHigherTitle.png",
+  titleText: "Flying Higher"
 };
 
 const MainScreen = props => {
@@ -28,12 +30,14 @@ const MainScreen = props => {
     selectedSite,
     onSiteTapped,
     onSiteChanged,
-    titleImageURL
+    titleImageURL,
+    titleText
   } = props;
   return (
     <div className="mainScreen">
       <div className="titleImage">
         <img width="100%" src={titleImageURL} alt="title" />
+        <div className="titleText">{titleText}</div>
       </div>
 
       <Intro {...introJson} />

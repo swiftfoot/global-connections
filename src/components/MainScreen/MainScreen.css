@@ -6,6 +6,10 @@
   align-items: center;
 }
 
+.mainScreen .titleText {
+  margin-top: -3.5rem;
+}
+
 .titleImage {
   position: relative;
   width: 100%;
