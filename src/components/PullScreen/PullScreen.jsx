@@ -22,7 +22,7 @@ const PullScreen = props => {
     return (
       <div onClick={onClick}>
         <div className="videoScrim" />
-        <video width="100%" height="100%" autoPlay muted loop>
+        <video className="video" width="100%" height="100%" autoPlay muted loop>
           <source src={background} />
         </video>
         <div className="title">
