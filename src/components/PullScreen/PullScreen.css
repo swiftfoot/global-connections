@@ -8,6 +8,15 @@
   flex-flow: column;
   justify-content: center;
 }
+.videoScrim {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../img/Background.png");
+  opacity: 0.5;
+  z-index: 50;
+}
 .titleBackground {
   position: absolute;
   top: 0px;
