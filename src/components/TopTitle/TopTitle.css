@@ -1,8 +1,20 @@
 .topTitleText {
   margin-top: -3.5rem;
+ 
+}
+.topTitleText.titleText {
+font-size: 65pt;
+padding-top: 2.0rem
 }
 
 .topTitleImage {
   position: relative;
   width: 100%;
+  padding-top: 1rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.topTitleImage img {
+ width: 90%
 }

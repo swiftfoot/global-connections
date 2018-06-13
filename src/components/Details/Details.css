@@ -17,7 +17,7 @@
 }
 
 .locationDetails {
-  padding: 4rem 4rem 2rem;
+  padding: 60px 4rem 2rem;
   font-weight: 500;
   color: #ffffff;
   font-size: 22pt;
@@ -35,29 +35,32 @@
   font-family: GhostLight;
 }
 .separator {
-  width: calc(100% - 7rem);
+  width: calc(100% - 4rem);
   margin: 0rem 2rem;
   display: block;
 }
 .imageDetails {
   color: #d9d0ad;
-  font-family: FranklinGothicBook;
+  font-family: LiberationSans;
   padding: 0rem 4rem;
   overflow-y: auto;
 }
 .imageTitle {
-  font-size: 24pt;
+  font-size: 24px;
   font-family: LiberationSans;
-  margin: 1rem 0rem 1rem;
+  font-weight:600;
+  margin: 2rem 0rem 1.5rem;
 }
 .imageCaption {
-  font-size: 20px;
-  height: 180px;
+  font-size: 18px;
+  height: 170px;
+  font-weight:200;
+  line-height: 1.5rem;
 }
 
 .credit {
   color: #7c7c7c;
-  font-size: 16px;
+  font-size: 15px;
   padding: 2rem 4rem;
   align-self: flex-start;
 }

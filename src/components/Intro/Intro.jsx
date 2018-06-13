@@ -20,18 +20,7 @@ const Intro = props => (
       ))}
     </div>
     <div className="introDetails">
-      <div className="introDetailsText">{props.details}</div>
-      <img
-        className="introSeparator"
-        src="img/intro/TextSeparatorBars.png"
-        alt=""
-      />
-      <img
-        className="introSeparator"
-        src="img/intro/TextSeparatorBars.png"
-        alt=""
-      />
-      <div className="introDetailsText">{props.callToAction}</div>
+      <div className="introDetailsText">{props.details} {props.callToAction}</div>
     </div>
   </div>
 );
