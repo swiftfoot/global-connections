@@ -13,7 +13,7 @@ const propTypes = {
 const defaultProps = {
   titleImage: "img/pull-screen/IntroScreenBarTitle.png",
   titleText: "Flying Higher",
-  background: "img/pull-screen/redtails bg gray.mp4"
+  background: "img/pull-screen/redtails bg blue.mp4"
 };
 
 const PullScreen = props => {
@@ -21,7 +21,6 @@ const PullScreen = props => {
   if (background.indexOf("mp4")) {
     return (
       <div onClick={onClick}>
-        <div className="videoScrim" />
         <video className="video" width="100%" height="100%" autoPlay muted loop>
           <source src={background} />
         </video>
