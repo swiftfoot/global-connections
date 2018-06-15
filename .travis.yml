@@ -1,3 +1,13 @@
 language: node_js
 node_js:
-  - "node"
+- node
+deploy:
+  provider: codedeploy
+  revision_type: github
+  access_key_id: AKIAIZPEZT7ZJN67XKHQ
+  application: FlyingHigh
+  deployment_group: FlyingHigh
+  region: us-east-2
+  wait-until-deployed: true
+  secret_access_key:
+    secure: CPbYjafg5itbXsepGO1UL3xQhmGRqJtlVZGqsMTap3SIa0xztZiW7jmDIwZla/b1aiLM6yb5sas2pPnxAa0cMh/2w3CE8Ddqr/4/3aFEtXg4KpcJQ3lPXx5YLcYuDuLytByq8QWYnRoAuiBqNqNCP0PIC4GIjyGdNNKG8RtvnLIS6CmmaqXBL+NlPwuRyU7P8qcJx6ZqewMTqYF9P0SjDqQRO+fJLe7KJbkozJWX34LIzQtwmxa1bRe+Hixrrk6bNtEVuz33rq3c5NVTFUIvhsxbgFGvmQbZDe/IxiJ6C3YjTYrZ4PkqRwi7Tnjj3kExaEHc9wgcUCzLoFQYyC/JzZB5SqKabEvzt/J+6VDXo8Lnf1kO7eQ+j2sd+Wt+P/8JTPqKRgWJnSXKT6wxg2oBbtULYduTfUnpHEkIZvhsKJ+KqoSNFCQynt86B9AHArE1pqUWZeyxqpC7CkEG2o2TXIa6IHDadSwjHxg3I5kKLwohVk8FHz0mJdf6f3VH1drxSZBsyAzvKWWMjkeRRohkkiAoh+MZDtV4fuOJGOYdU7ji+TtnxlkaPNfceionzayeLv59qiUYyq+xwZjs3zp7RZDqMTg4Gb3yVcMW7Rf3Mt8q27PEYA/ml7WyrdUcglzCHy88CJvb9uvTwTXiGPALK8iPw+79bCUv3ZW8ypYLevc=
