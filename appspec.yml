@@ -24,7 +24,7 @@ os: linux
 #   may cause associated deployments to fail.
 files:
   - source: /
-    destination: /home/ec2-user
+    destination: /home/ec2-user/flying-higher
 # For deployments to Amazon Linux, Ubuntu Server, or RHEL instances,
 #   you can specify a "permissions" 
 #   section here that describes special permissions to apply to the files 
@@ -39,10 +39,10 @@ files:
 #   the "hooks" section altogether. A blank or incomplete "hooks" section
 #   may cause associated deployments to fail.
 permissions:
-  - object: /scripts
-    pattern: "*.sh"
+  - object: /home/ec2-user/flying-higher
+    pattern: "**"
     mode: 755
-    owner: root
+    owner: nd-deploy
 hooks:
 # For each deployment lifecycle event, specify multiple "location" entries 
 #   if you want to run multiple scripts during that event.
