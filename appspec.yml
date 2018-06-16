@@ -42,6 +42,7 @@ permissions:
   - object: /scripts
     pattern: "*.sh"
     mode: 755
+    owner: root
     type:
 hooks:
 # For each deployment lifecycle event, specify multiple "location" entries 
@@ -79,11 +80,11 @@ hooks:
 AfterInstall: 
     - location: scripts/build.sh   
       timeout: 
-      runas:  
+      runas: root
 ApplicationStart: 
     - location: scripts/start.sh    
       timeout: 
-      runas:
+      runas: root
 # During the ValidateService deployment lifecycle event, run the commands 
 #   in the script specified in "location".
  
