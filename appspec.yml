@@ -43,7 +43,6 @@ permissions:
     pattern: "*.sh"
     mode: 755
     owner: root
-    type:
 hooks:
 # For each deployment lifecycle event, specify multiple "location" entries 
 #   if you want to run multiple scripts during that event.
