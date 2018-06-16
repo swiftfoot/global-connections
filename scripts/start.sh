@@ -1,1 +1,1 @@
-yarn serve -b build
+yarn serve -s build
