@@ -42,7 +42,7 @@ permissions:
   - object: /home/ec2-user/flying-higher
     pattern: "**"
     mode: 755
-    owner: nd-deploy
+    owner: ec2-user
 hooks:
 # For each deployment lifecycle event, specify multiple "location" entries 
 #   if you want to run multiple scripts during that event.
