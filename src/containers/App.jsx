@@ -43,7 +43,11 @@ class App extends Component {
     this.setState({ isSiteOpen: false, isPullShowing: true });
   };
 
-  handleSiteToggle = () => {
+  handleSiteToggle = (id, event) => {
+    if (event) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
     setTimeout(
       () => this.setState(state => ({ isSiteOpen: !state.isSiteOpen })),
       !this.state.isSiteOpen ? 1000 : 0 // trigger with slight delay when opening

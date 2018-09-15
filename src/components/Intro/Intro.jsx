@@ -13,14 +13,16 @@ const Intro = props => (
   <div className="intro">
     <div className="introText">
       {props.intro.split(";").map((line, index, { length }) => (
-        <span>
+        <span key={`intro-${line}`}>
           {`${line}${index + 1 !== length ? ";" : ""}`}
           <br />
         </span>
       ))}
     </div>
     <div className="introDetails">
-      <div className="introDetailsText">{props.details} {props.callToAction}</div>
+      <div className="introDetailsText">
+        {props.details} {props.callToAction}
+      </div>
     </div>
   </div>
 );
