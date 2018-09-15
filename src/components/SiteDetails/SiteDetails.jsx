@@ -63,7 +63,7 @@ class SiteDetails extends Component {
             src="img/site-details/Button-Close-X.png"
             alt="Close"
             className="closeButton"
-            onClick={onCloseSite}
+            onClick={() => onCloseSite(selectedSite.id)}
           />
         </div>
       </CSSTransition>

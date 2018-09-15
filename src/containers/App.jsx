@@ -44,14 +44,15 @@ class App extends Component {
   };
 
   handleSiteToggle = (id, event) => {
+    const { selectedSite } = this.state;
     if (event) {
       event.stopPropagation();
       event.preventDefault();
     }
-    setTimeout(
-      () => this.setState(state => ({ isSiteOpen: !state.isSiteOpen })),
-      !this.state.isSiteOpen ? 1000 : 0 // trigger with slight delay when opening
-    );
+
+    if (id === selectedSite.id) {
+      this.setState(state => ({ isSiteOpen: !state.isSiteOpen }));
+    }
   };
 
   handleSiteChanged = (oldSite, site) => {

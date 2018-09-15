@@ -31,25 +31,41 @@ class SiteCarousel extends React.Component {
       infinite: true,
       arrows: false,
       slidesToShow: 3,
-      speed: 200,
+      speed: 500,
+      cssEase: "ease-out",
       slidesToScroll: 1,
       centerMode: true,
       centerPadding: "0px",
       autoplay: true,
       autoplaySpeed: 5000,
       focusOnSelect: true,
+      draggable: true,
+      swipeToSlide: true,
       initialSlide: _.findIndex(props.sites, props.selectedSite)
     };
   }
 
+  componentWillUnmount() {
+    clearTimeout(this.swipeTimeout);
+  }
+
+  swiped = () => {
+    this.recentlySwiped = true;
+    clearTimeout(this.swipeTimeout);
+    this.swipeTimeout = setTimeout(() => {
+      this.recentlySwiped = false;
+    }, 300);
+  };
+
+  siteTapped = (id, event) => {
+    const { siteTapped } = this.props;
+    if (!this.recentlySwiped) {
+      siteTapped(id, event);
+    }
+  };
+
   render() {
-    const {
-      visible,
-      siteChanged,
-      selectedSite,
-      siteTapped,
-      sites
-    } = this.props;
+    const { visible, siteChanged, selectedSite, sites } = this.props;
 
     const style = { visibility: visible ? "visible" : "hidden" };
     return (
@@ -70,12 +86,16 @@ class SiteCarousel extends React.Component {
             left: `${this.settings.slidesToShow === 3 ? 3.5 : 3}%`
           }}
         >
-          <Slider {...this.settings} beforeChange={siteChanged}>
+          <Slider
+            {...this.settings}
+            onSwipe={this.swiped}
+            beforeChange={siteChanged}
+          >
             {sites.map((site, key) => (
               <div
                 className="slide"
                 key={`div-${site.id}`}
-                onClick={event => siteTapped(site.id, event)}
+                onClick={event => this.siteTapped(site.id, event)}
               >
                 <img
                   draggable="false"
