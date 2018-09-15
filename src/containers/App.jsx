@@ -18,6 +18,7 @@ class App extends Component {
   componentDidMount() {
     this.clickListener = document.addEventListener("click", this.waitForIdle);
     this.tapListener = document.addEventListener("touchEnd", this.waitForIdle);
+    this.waitForIdle();
   }
 
   componentWillUnmount() {
