@@ -23,6 +23,7 @@ class App extends Component {
   componentWillUnmount() {
     if (this.idleTimeout) {
       clearTimeout(this.idleTimeout);
+      clearTimeout(this.resetTimeout);
     }
     document.removeEventListener(this.clickListener);
     document.removeEventListener(this.tapListener);
@@ -31,8 +32,10 @@ class App extends Component {
   waitForIdle = () => {
     if (this.idleTimeout) {
       clearTimeout(this.idleTimeout);
+      clearTimeout(this.resetTimeout);
     }
     this.idleTimeout = setTimeout(this.resetState, 180000);
+    this.resetTimeout = setTimeout(() => window.location.reload(true), 360000);
   };
 
   resetState = () => {
